@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar/Navbar";
+import Feed from "./components/Feed/Feed";
+import { Box, Stack } from "@mui/system";
+import { ExpandMoreOutlined } from "@mui/icons-material";
 
-function App() {
+const App = () => {
+  const scrollWindow = () => {
+    window.scroll(100,0);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Box sx={{ maxWidth: "1920px" }}>
+      <Navbar />
+      <Stack direction="column">
+        <button
+          style={{
+            position: "fixed",
+            width: "50px",
+            height: "50px",
+            background: "none",
+            border: "2px solid #E31F26",
+            borderRadius: "50%",
+            right: "50px",
+            bottom: "30px",
+            hover: {
+              color: "#fff",
+              background: "red",
+            }, 
+          }}
+          onClick={scrollWindow}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <ExpandMoreOutlined style={{ color: "#E31F26", rotate: "180deg" }} />
+        </button>
+        <Feed />
+      </Stack>
+    </Box>
   );
-}
+};
 
 export default App;
