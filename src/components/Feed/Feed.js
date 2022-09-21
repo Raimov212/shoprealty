@@ -16,13 +16,13 @@ const Feed = () => {
       <Primary />
       <Post />
       <Export />
-      <Location />
+      {/* <Location />
       <Description />
       <Workers />
       <News />
       <Comment />
       <Instagram />
-      <About />
+      <About /> */}
     </Box>
   );
 };
